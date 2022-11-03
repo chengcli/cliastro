@@ -12,10 +12,15 @@ extern "C" {
   #include <interpolation.h>
 }
 
-// harp2 headers
+// debugger headers
+#include <debugger.hpp>
+
+// cliutils headers
+#include <fileio.hpp>
+
+// cliastro headers
 #include "celestrial_body.hpp"
-#include "../radiation/radiation.hpp"
-#include "../utils/fileio.hpp"
+//#include "../radiation/radiation.hpp"
 
 void CelestrialBody::ReadCelestrialData_(ParameterInput *pin, std::string myname)
 {
@@ -67,11 +72,10 @@ CelestrialBody::CelestrialBody(ParameterInput *pin):
   if (pin->DoesParameterExist("astronomy", name + ".spec_file")) {
     std::string sfile = pin->GetString("astronomy", name + ".spec_file");
     if (!FileExists(sfile)) {
-      msg << "### FATAL ERROR in initializing CelestrialBody"
-          << std::endl << "Cannot open spectral file " << sfile;
-      ATHENA_ERROR(msg);
-    } else 
+      Debugger::Fatal("CelestrialBody", "Cannot open spectral file", sfile);
+    } else {
       ReadSpectraFile(sfile);
+    }
   } else {
     spec_ = new float_triplet [1];
     nspec_ = 1;
@@ -93,11 +97,10 @@ CelestrialBody::CelestrialBody(ParameterInput *pin, std::string myname):
   if (pin->DoesParameterExist("astronomy", name + ".spec_file")) {
     std::string sfile = pin->GetString("astronomy", name + ".spec_file");
     if (!FileExists(sfile)) {
-      msg << "### FATAL ERROR in initializing CelestrialBody"
-          << std::endl << "Cannot open spectral file " << sfile;
-      ATHENA_ERROR(msg);
-    } else 
+      Debugger::Fatal("CelestrialBody", "Cannot open spectral file", sfile);
+    } else {
       ReadSpectraFile(sfile);
+    }
   } else {
     spec_ = new float_triplet [1];
     nspec_ = 1;

@@ -1,0 +1,12 @@
+[submodule "athenapp"]
+	path = athenapp
+	url = https://github.com/chengcli/athenapp
+[submodule "climath"]
+	path = climath
+	url = https://github.com/chengcli/climath
+[submodule "cliutils"]
+	path = cliutils
+	url = https://github.com/chengcli/cliutils
+[submodule "debugger"]
+	path = debugger
+	url = https://github.com/chengcli/debugger
