@@ -53,4 +53,4 @@ message(STATUS "Set up project complication and installation ...")
 
 # set up configure file
 configure_file(${CMAKE_SOURCE_DIR}/configure.hpp.in configure.hpp @ONLY)
-add_subdirectory(src)
+add_subdirectory(cliastro)

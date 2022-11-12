@@ -52,7 +52,7 @@ foreach(build ${BUILD_TYPES})
   mark_as_advanced(CLIASTRO_LIBRARY_${build})
 endforeach()
 
-set(CLIASTRO_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src
+set(CLIASTRO_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..
   CACHE PATH 
   "cliastro include directory")
 set(CLIASTRO_FOUND TRUE CACHE BOOL "FIND CLIASTRO LIBRARY")
