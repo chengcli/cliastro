@@ -1,6 +1,8 @@
 ## set up model configuration ##
 
-set(CMAKE_BUILD_TYPE "DebugRelease")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
+  set(CMAKE_BUILD_TYPE "DebugRelease")
+endif()
 
 # configure athenapp
 message(STATUS "Include ${CMAKE_SOURCE_DIR}/athenapp/cmake/setup_configure.cmake")
