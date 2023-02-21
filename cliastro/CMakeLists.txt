@@ -33,9 +33,11 @@ foreach(build ${BUILD_TYPES})
   target_include_directories(cliastro_${buildl}
     SYSTEM PRIVATE
     ${CLIMATH_INCLUDE_DIR}
+    ${CLIMATH_INCLUDE_DIR}
     ${DEBUGGER_INCLUDE_DIR}
     ${ATHENAPP_INCLUDE_DIR}
     ${CLIUTILS_INCLUDE_DIR}
+    ${MPI_CXX_INCLUDE_PATH}
     ${CMAKE_BINARY_DIR}
   )
 
@@ -44,6 +46,7 @@ foreach(build ${BUILD_TYPES})
     ${DEBUGGER_LIBRARY_${build}}
     ${ATHENAPP_LIBRARY_${build}}
     ${CLIUTILS_LIBRARY_${build}}
+    ${MPI_CXX_LIBRARIES}
     )
 
   set(CLIASTRO_LIBRARY_${build} cliastro_${buildl}
