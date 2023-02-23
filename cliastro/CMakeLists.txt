@@ -16,7 +16,11 @@
 #   target_link_libraries( ${CLIASTRO_LIBRARY_DEBUG})
 #
 
-file(GLOB _src_files *.cpp)
+file(GLOB _src_files 
+  *.cpp
+  Jupiter/*.cpp
+  Saturn/*.cpp
+  )
 
 foreach(build ${BUILD_TYPES})
   string(TOLOWER ${build} buildl)
